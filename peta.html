@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <title>Peta Wisata Kota Kupang</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="css/leaflet.css" />
+    <link rel="stylesheet" href="css/leaflet-search.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: calc(100vh - 200px);
+      }
+      .autocomplete-list {
+        position: absolute;
+        background: white;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        max-height: 200px;
+        overflow-y: auto;
+        z-index: 1050;
+        width: 100%;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+      .autocomplete-item {
+        padding: 8px 12px;
+        cursor: pointer;
+      }
+      .autocomplete-item:hover,
+      .autocomplete-item.active {
+        background-color: #007bff;
+        color: white;
+      }
+      /* Letakkan container autocomplete tepat di bawah input */
+      #search-container {
+        position: relative;
+      }
+      .leaflet-popup-content img {
+        max-width: 250px; /* maksimal lebar */
+        max-height: 150px; /* maksimal tinggi */
+        width: 100%; /* lebar penuh container popup */
+        height: auto; /* tinggi proporsional */
+        display: block;
+        margin-top: 8px;
+        border-radius: 6px;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand" href="#">Peta Wisata Kupang</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+            <li class="nav-item"><a class="nav-link" href="data-wisata.html">Data Wisata</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="peta.html">Peta</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Search bar with autocomplete container -->
+    <div class="bg-light py-3 px-3 shadow-sm">
+      <div class="container">
+        <div class="row g-2 align-items-center" id="search-container">
+          <div class="col-md-10 col-sm-12 position-relative">
+            <input type="text" id="globalSearch" class="form-control" placeholder="Temukan alamat atau tempat" autocomplete="off" />
+            <div id="autocomplete-list" class="autocomplete-list" style="display: none"></div>
+          </div>
+          <div class="col-md-2 col-sm-12">
+            <button id="searchButton" class="btn btn-success w-100" disabled>Cari</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container my-3">
+      <div class="row g-2 align-items-center">
+        <div class="col-md-4">
+          <select id="kategoriFilter" class="form-select">
+            <option value="all">Tampilkan Semua Kategori</option>
+            <option value="pantai">Pantai</option>
+            <option value="kuliner">Kuliner</option>
+            <option value="bendungan">Bendungan</option>
+            <option value="gua">Gua</option>
+            <option value="air">Air Terjun</option>
+            <option value="taman">Taman</option>
+            <option value="bukit">Bukit</option>
+            <option value="gunung">Gunung</option>
+            <option value="sub">Waterpark</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <a href="#" id="btnGoogleMaps" class="btn btn-outline-primary d-none"> 📍 Buka di Google Maps </a>
+        </div>
+        <div class="col-md-4">
+          <button id="btnResetRute" class="btn btn-danger d-none">🔄 Reset Rute</button>
+        </div>
+        <div class="col-md-4">
+          <button id="btnTentukanAwal" class="btn btn-secondary">🧭 Tentukan Lokasi Awal</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Peta -->
+    <div id="map"></div>
+
+    <!-- JS Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/leaflet.js"></script>
+    <script src="js/leaflet-search.min.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.min.js"></script>
+
+    <script>
+      // Setup marker icon lokal
+      delete L.Icon.Default.prototype._getIconUrl;
+      L.Icon.Default.mergeOptions({
+        iconRetinaUrl: "img/marker-icon-2x.png",
+        iconUrl: "img/marker-icon.png",
+        shadowUrl: "img/marker-shadow.png",
+      });
+
+      // Inisialisasi peta dengan view default di Kupang
+      var map = L.map("map").setView([-10.1772, 123.607], 13);
+
+      // Tambahkan tile layer OpenStreetMap
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap contributors",
+      }).addTo(map);
+
+      var markers = [
+        {
+          name: "Pantai Lasiana",
+          coords: [-10.130998674091183, 123.67047949936193],
+          info: "Tempat wisata populer.",
+          img: "img/lasiana.jpg",
+          kategori: "pantai",
+        },
+        {
+          name: "Gua Monyet",
+          coords: [-10.148074572286857, 123.6131017294431],
+          info: "Wisata alam dan religi.",
+          img: "img/monyet.jpg",
+          kategori: "gua",
+        },
+        {
+          name: "Batu Nona Beach",
+          coords: [-10.133315299033942, 123.6608766058927],
+          info: "Tempat wisata alam.",
+          img: "img/batunona.jpg",
+          kategori: "pantai",
+        },
+        {
+          name: "Pantai Manikin",
+          coords: [-10.124995355031986, 123.67400397890674],
+          info: "Tempat wisata alam.",
+          img: "img/manikin.jpg",
+          kategori: "pantai",
+        },
+        {
+          name: "Pantai Tablolong",
+          coords: [-10.317886686733058, 123.475176178821],
+          info: "Tempat wisata alam.",
+          img: "img/tablolo.webp",
+          kategori: "pantai",
+        },
+        {
+          name: "Air Terjun Oenesu",
+          coords: [-10.265861733660183, 123.56618549425217],
+          info: "Tempat wisata alam.",
+          img: "img/air-terjun.jpg",
+          kategori: "air",
+        },
+        {
+          name: "Gua Kristal",
+          coords: [-10.224322790653583, 123.5105115918874],
+          info: "Tempat wisata alam.",
+          img: "img/kristal.jpg",
+          kategori: "gua",
+        },
+        {
+          name: "Subasuka WaterPark",
+          coords: [-10.148871331704648, 123.60674016356441],
+          info: "Tempat wisata buatan.",
+          img: "img/subasuka.webp",
+          kategori: "sub",
+        },
+        {
+          name: "Bukit Cinta",
+          coords: [-10.160020151052857, 123.66458563746433],
+          info: "Tempat wisata populer.",
+          img: "img/bcinta.jpg",
+          kategori: "bukit",
+        },
+        {
+          name: "Gunung Fatule'u",
+          coords: [-9.949798678026392, 123.86134117827028],
+          info: "Tempat wisata alam.",
+          img: "img/fatuleu.jpg",
+          kategori: "gunung",
+        },
+        {
+          name: "Taman Nostalgia",
+          coords: [-10.159086795623251, 123.61530732123605],
+          info: "Tempat wisata buatan.",
+          img: "img/tamnos.jpg",
+          kategori: "taman",
+        },
+        {
+          name: "Kuah Asam Ikan Tenau",
+          coords: [-10.189980455486536, 123.52844324822225],
+          info: "Tempat wisata kuliner.",
+          img: "img/artis.jpg",
+          kategori: "kuliner",
+        },
+        {
+          name: "Kafe Tebing",
+          coords: [-10.20296564731988, 123.53124064027962],
+          info: "Tempat wisata kuliner.",
+          img: "img/tebing.jpg",
+          kategori: "kuliner",
+        },
+        {
+          name: "Bendungan Tilong",
+          coords: [-10.17061524533008, 123.74547949609996],
+          info: "Tempat wisata buatan.",
+          img: "img/tilong.jpg",
+          kategori: "bendungan",
+        },
+        {
+          name: "Bendungan Raknamo",
+          coords: [-10.119192981924623, 123.9317992538553],
+          info: "Tempat wisata buatan.",
+          img: "img/raknamo.jpg",
+          kategori: "bendungan",
+        },
+      ];
+
+      // Layer group untuk marker
+      var markerLayer = L.layerGroup().addTo(map);
+
+      const kategoriIcons = {
+        kuliner: L.icon({
+          iconUrl: "img/food.png",
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -30],
+        }),
+        bendungan: L.icon({
+          iconUrl: "img/dam.png",
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -30],
+        }),
+        gua: L.icon({
+          iconUrl: "img/cave.png",
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -30],
+        }),
+        air: L.icon({
+          iconUrl: "img/waterfall.png",
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -30],
+        }),
+        sub: L.icon({
+          iconUrl: "img/backpack.png",
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -30],
+        }),
+        taman: L.icon({
+          iconUrl: "img/park.png",
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -30],
+        }),
+        pantai: L.icon({
+          iconUrl: "img/island.png",
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -30],
+        }),
+        bukit: L.icon({
+          iconUrl: "img/elevation.png",
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -30],
+        }),
+        gunung: L.icon({
+          iconUrl: "img/mountain.png",
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -30],
+        }),
+      };
+      const modalMap = {
+        "Pantai Lasiana": "modalLasiana",
+        "Gua Monyet": "modalGua",
+        "Batu Nona Beach": "modalBatu",
+        "Pantai Manikin": "modalManikin",
+        "Pantai Tablolong": "modalTablolo",
+        "Air Terjun Oenesu": "modalOenesu",
+        "Gua Kristal": "modalKristal",
+        "Subasuka WaterPark": "modalSubasuka",
+        "Bukit Cinta": "modalBukit",
+        "Gunung Fatule'u": "modalFatuleu",
+        "Taman Nostalgia": "modalNostalgia",
+        "Kuah Asam Ikan Tenau": "modalArtis",
+        "Kafe Tebing": "modalTebing",
+        "Bendungan Tilong": "modalTilong",
+        "Bendungan Raknamo": "modalRaknamo",
+      };
+
+      function tampilkanMarkerBerdasarkanKategori(kategori) {
+        markerLayer.clearLayers();
+
+        markers.forEach((data) => {
+          if (kategori === "all" || data.kategori === kategori) {
+            const customIcon = kategoriIcons[data.kategori] || L.Icon.Default.prototype;
+            const modalId = modalMap[data.name] || "";
+            const kategoriLabel = data.kategori?.toUpperCase() || "WISATA";
+
+            const popupContent = `
+              <div class="card shadow-sm border-0" style="width: 15rem; font-size: 0.85rem;">
+                <img src="${data.img}" class="card-img-top rounded-top" alt="${data.name}" style="height: 120px; object-fit: cover;" />
+                <div class="card-body p-2">
+                  <span class="badge bg-success mb-2" style="font-size: 0.7rem;">${kategoriLabel}</span>
+                  <h6 class="card-title mb-1 fw-semibold">${data.name}</h6>
+                  <p class="card-text text-muted small mb-2">${data.info}</p>
+                  <a href="data-wisata.html?modal=${modalId}" class="btn btn-sm btn-primary w-100">
+                    <i class="bi bi-eye-fill me-1"></i> Lihat Detail
+                  </a>
+                  <a href="#" onclick="ruteKe(${data.coords[0]}, ${data.coords[1]}); return false;"
+                     class="btn btn-sm btn-outline-success w-100 mt-1">
+                    <i class="bi bi-geo-alt-fill me-1"></i> Petunjuk Arah
+                  </a>
+                </div>
+              </div>
+            `;
+
+            const marker = L.marker(data.coords, { icon: customIcon }).bindPopup(popupContent);
+            marker.feature = { properties: { name: data.name } };
+            markerLayer.addLayer(marker);
+          }
+        });
+      }
+
+      // Buat instance Search Control (tidak ditampilkan, hanya dipakai internal)
+      var searchControl = new L.Control.Search({
+        layer: markerLayer,
+        propertyName: "name",
+        initial: false,
+        zoom: 16,
+        autoType: true,
+        autoCollapse: false,
+      });
+
+      // Elemen input dan tombol
+      const input = document.getElementById("globalSearch");
+      const btnSearch = document.getElementById("searchButton");
+      const autocompleteList = document.getElementById("autocomplete-list");
+
+      btnSearch.disabled = false;
+
+      // Fungsi menampilkan autocomplete hasil pencarian
+      function showAutocomplete(results) {
+        autocompleteList.innerHTML = "";
+        if (results.length === 0) {
+          autocompleteList.style.display = "none";
+          return;
+        }
+
+        results.forEach((result, idx) => {
+          const item = document.createElement("div");
+          item.className = "autocomplete-item";
+          item.textContent = result.text;
+          item.dataset.lat = result.latlng.lat;
+          item.dataset.lng = result.latlng.lng;
+
+          item.addEventListener("click", () => {
+            input.value = result.text;
+            map.setView(result.latlng, searchControl.options.zoom);
+            markerLayer.eachLayer(function (layer) {
+              if (layer.feature && layer.feature.properties.name === result.text) {
+                layer.openPopup();
+              }
+            });
+            autocompleteList.style.display = "none";
+          });
+
+          autocompleteList.appendChild(item);
+        });
+        autocompleteList.style.display = "block";
+      }
+
+      // Fungsi pencarian manual berdasarkan input text
+      function performSearch(text) {
+        if (!text || text.length < 1) {
+          autocompleteList.style.display = "none";
+          return;
+        }
+
+        let results = [];
+        const lowerText = text.toLowerCase();
+
+        markerLayer.eachLayer((layer) => {
+          const name = layer.feature.properties.name;
+          if (name.toLowerCase().includes(lowerText)) {
+            results.push({ text: name, latlng: layer.getLatLng() });
+          }
+        });
+
+        showAutocomplete(results);
+      }
+
+      // Event listener untuk input text search
+      input.addEventListener("input", () => {
+        performSearch(input.value);
+      });
+
+      // Event listener tombol cari
+      btnSearch.addEventListener("click", () => {
+        const searchText = input.value.trim();
+        if (!searchText) return;
+
+        let found = false;
+        markerLayer.eachLayer((layer) => {
+          if (layer.feature.properties.name.toLowerCase() === searchText.toLowerCase()) {
+            map.setView(layer.getLatLng(), searchControl.options.zoom);
+            layer.openPopup();
+            found = true;
+          }
+        });
+
+        if (!found) {
+          alert("Tempat tidak ditemukan.");
+        }
+        autocompleteList.style.display = "none";
+      });
+
+      // Klik di luar autocomplete untuk menutup daftar
+      document.addEventListener("click", function (e) {
+        if (!document.getElementById("search-container").contains(e.target)) {
+          autocompleteList.style.display = "none";
+        }
+      });
+      // Event handler dropdown filter
+      document.getElementById("kategoriFilter").addEventListener("change", function () {
+        const selected = this.value;
+        tampilkanMarkerBerdasarkanKategori(selected);
+      });
+
+      // Panggil pertama kali untuk tampilkan semua marker
+      tampilkanMarkerBerdasarkanKategori("all");
+      let controlRute = null;
+      let manualStart = null;
+      let pilihAwalMode = false;
+
+      document.getElementById("btnTentukanAwal").addEventListener("click", function () {
+        pilihAwalMode = true;
+        alert("Silakan klik pada peta untuk menentukan lokasi awal.");
+      });
+
+      map.on("click", function (e) {
+        if (!pilihAwalMode) return;
+
+        // Simpan titik awal manual
+        if (manualStart) {
+          map.removeLayer(manualStart);
+        }
+
+        manualStart = L.marker(e.latlng, { draggable: true }).addTo(map);
+        pilihAwalMode = false;
+
+        alert("Lokasi awal ditetapkan. Sekarang klik tombol 'Petunjuk Arah' di popup objek wisata.");
+      });
+
+      function ruteKe(destLat, destLng) {
+        if (controlRute) {
+          map.removeControl(controlRute);
+        }
+
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            function (pos) {
+              const loader = document.getElementById("loadingInfo");
+              if (loader) loader.remove();
+
+              const userLat = pos.coords.latitude;
+              const userLng = pos.coords.longitude;
+
+              // Tampilkan rute di Leaflet
+              controlRute = L.Routing.control({
+                waypoints: [manualStart ? manualStart.getLatLng() : L.latLng(userLat, userLng), L.latLng(destLat, destLng)],
+
+                lineOptions: {
+                  styles: [{ color: "blue", opacity: 0.6, weight: 5 }],
+                },
+                show: false,
+                routeWhileDragging: false,
+                addWaypoints: false,
+                draggableWaypoints: false,
+                createMarker: () => null,
+              }).addTo(map);
+
+              // Update URL Google Maps
+              const origin = manualStart ? manualStart.getLatLng() : { lat: userLat, lng: userLng };
+
+              const mapsURL = `https://www.google.com/maps/dir/?api=1&origin=${userLat},${userLng}&destination=${destLat},${destLng}`;
+              const gmapsBtn = document.getElementById("btnGoogleMaps");
+              gmapsBtn.href = mapsURL;
+              gmapsBtn.classList.remove("d-none");
+
+              const resetBtn = document.getElementById("btnResetRute");
+              resetBtn.classList.remove("d-none");
+            },
+            function () {
+              alert("Gagal mendapatkan lokasi Anda. Aktifkan izin lokasi.");
+            }
+          );
+        } else {
+          alert("Browser Anda tidak mendukung geolokasi.");
+        }
+
+        // Hapus loader jika masih ada
+        const loading = document.getElementById("loadingInfo");
+        if (loading) loading.remove();
+
+        const loadingNew = document.createElement("div");
+        loadingNew.textContent = "Mendeteksi lokasi Anda...";
+        loadingNew.id = "loadingInfo";
+        loadingNew.className = "position-absolute top-0 start-50 translate-middle-x p-2 mt-2 bg-white border rounded shadow-sm small";
+        document.body.appendChild(loadingNew);
+      }
+
+      // Jangan sembunyikan tombol saat popup ditutup
+      map.on("popupclose", () => {
+        const loader = document.getElementById("loadingInfo");
+        if (loader) loader.remove();
+      });
+
+      const loading = document.createElement("div");
+      loading.textContent = "Mendeteksi lokasi Anda...";
+      loading.id = "loadingInfo";
+      loading.className = "position-absolute top-0 start-50 translate-middle-x p-2 mt-2 bg-white border rounded shadow-sm small";
+      document.body.appendChild(loading);
+
+      navigator.geolocation.getCurrentPosition(
+        function (pos) {
+          // bisa tambahkan toast atau loader kalau mau
+        },
+        function () {
+          alert("Gagal mendapatkan lokasi Anda. Aktifkan izin lokasi.");
+        }
+      );
+
+      document.getElementById("btnResetRute").addEventListener("click", function () {
+        if (controlRute) {
+          map.removeControl(controlRute);
+          controlRute = null;
+        }
+        if (manualStart) {
+          map.removeLayer(manualStart);
+          manualStart = null;
+        }
+
+        document.getElementById("btnGoogleMaps").classList.add("d-none");
+        this.classList.add("d-none");
+      });
+    </script>
+  </body>
+</html>
