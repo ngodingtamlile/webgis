@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tentang Kami - Wisata Kupang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: url('img/kupang.jpg') no-repeat center center/cover;
+      color: white;
+      min-height: 100vh;
+    }
+    .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 4rem 2rem;
+      min-height: 100vh;
+    }
+    .team-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+    .card {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: white;
+    }
+    .card-body {
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 0 0 15px 15px;
+    }
+    h2, p {
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Wisata Kupang</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="data-wisata.html">Data Wisata</a></li>
+          <li class="nav-item"><a class="nav-link" href="peta.html">Peta</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">Tentang</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="overlay text-center">
+    <div class="container">
+      <h2 class="mb-4">Tentang Proyek Ini</h2>
+      <p class="lead mb-5">
+        Proyek ini merupakan hasil kerja tim mahasiswa Teknologi Informasi Universitas Timor sebagai bagian dari Ujian Akhir Semester mata kuliah Teknologi Informasi Geospasial (TIG).
+        Aplikasi ini dibuat untuk membantu wisatawan menjelajahi destinasi menarik di Kota Kupang secara interaktif dan informatif.
+      </p>
+
+      <h3 class="mb-4">Tim Pengembang</h3>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <div class="col">
+          <div class="card h-100 text-center">
+            <img src="img/at.jpg" alt="Anggota 1" class="team-img">
+            <div class="card-body">
+              <h5 class="card-title">Aditya Hutubessy</h5>
+              <p class="card-text">Email: adityahutubessy1410@gmail.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 text-center">
+            <img src="img/bayu.jpg" alt="Anggota 2" class="team-img">
+            <div class="card-body">
+              <h5 class="card-title">Benediktus Yanuarius Sisuk</h5>
+              <p class="card-text">Email: bayusisuk@gmail.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 text-center">
+            <img src="img/mekos.jpg" alt="Anggota 3" class="team-img">
+            <div class="card-body">
+              <h5 class="card-title">Melkianus Amsikan</h5>
+              <p class="card-text">Email: melkyamsikanmr@gmail.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 text-center">
+            <img src="img/vicko.jpg" alt="Anggota 4" class="team-img">
+            <div class="card-body">
+              <h5 class="card-title">Don Alberto Vicko Naben</h5>
+              <p class="card-text">Email: vickoooo028@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-5">Terima kasih telah mengunjungi aplikasi kami. Mari dukung pariwisata lokal bersama!</p>
+    </div>
+  </div>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
