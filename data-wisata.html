@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Data Wisata</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+      body,
+      html {
+       height: 100%;
+       margin: 0;
+       padding: 0;
+       background: url("img/kupang.jpg") no-repeat center center fixed;
+       background-size: cover;
+       color: white;
+       }
+    </style>
+    
+  </head>
+  <body>
+    <div class="overlay">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">Wisata Kupang</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+              <li class="nav-item"><a class="nav-link active" href="data-wisata.html">Data Wisata</a></li>
+              <li class="nav-item"><a class="nav-link" href="peta.html">Peta</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container">
+          <h1>Jelajahi Tempat Wisata Terbaik di Kupang</h1>
+        </div>
+      </section>
+
+      <!-- Wisata Section -->
+      <div class="container my-5">
+        <h2 class="text-center mb-4">Daftar Tempat Wisata</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <!-- Pantai Lasiana -->
+          <div class="col">
+            <div class="card h-100">
+              <img src="img/lasiana.jpg" class="card-img-top" alt="Pantai Lasiana" />
+              <div class="card-body">
+                <h5 class="card-title">Pantai Lasiana</h5>
+                <p class="card-text">Pantai ikonik dengan pasir putih dan deretan pohon lontar yang memikat.</p>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLasiana">Lihat Detail</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gua Monyet -->
+          <div class="col">
+            <div class="card h-100">
+              <img src="img/monyet.jpg" class="card-img-top" alt="Gua Monyet" />
+              <div class="card-body">
+                <h5 class="card-title">Gua Monyet</h5>
+                <p class="card-text">Gua alami dengan suasana mistis dan habitat monyet liar.</p>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalGua">Lihat Detail</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Batu Nona Beach -->
+          <div class="col">
+            <div class="card h-100">
+              <img src="img/batunona.jpg" class="card-img-top" alt="Batu Nona Beach" />
+              <div class="card-body">
+                <h5 class="card-title">Batu Nona Beach</h5>
+                <p class="card-text">Pantai cantik dengan kisah legenda yang menambah daya tariknya.</p>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalBatu">Lihat Detail</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pantai Manikin -->
+          <div class="col">
+            <div class="card h-100">
+              <img src="img/manikin.jpg" class="card-img-top" alt="Pantai Manikin" />
+              <div class="card-body">
+                <h5 class="card-title">Pantai Manikin</h5>
+                <p class="card-text">Pantai bersih dan luas, cocok untuk piknik dan bermain air bersama keluarga.</p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalManikin">Lihat Detail</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pantai Tablolong -->
+          <div class="col">
+            <div class="card h-100">
+              <img src="img/tablolo.webp" class="card-img-top" alt="Pantai Tablolong" />
+              <div class="card-body">
+                <h5 class="card-title">Pantai Tablolong</h5>
+                <p class="card-text">Surganya pemancing dan penyelam dengan air laut yang tenang.</p>
+                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalTablolo">Lihat Detail</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Air Terjun Oenesu -->
+          <div class="col">
+            <div class="card h-100">
+              <img src="img/air-terjun.jpg" class="card-img-top" alt="Air Terjun Oenesu" />
+              <div class="card-body">
+                <h5 class="card-title">Air Terjun Oenesu</h5>
+                <p class="card-text">Air terjun bertingkat di tengah hutan tropis yang menyegarkan.</p>
+                   <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalOenesu">Lihat Detail</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gua Kristal -->
+          <div class="col">
+            <div class="card h-100">
+              <img src="img/kristal.jpg" class="card-img-top" alt="Gua Kristal" />
+              <div class="card-body">
+                <h5 class="card-title">Gua Kristal</h5>
+                <p class="card-text">Gua dengan kolam air jernih yang menakjubkan dan cocok untuk berenang.</p>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalKristal">Lihat Detail</button>
+                
+              </div>
+            </div>
+          </div>
+
+          <!-- Subasuka WaterPark -->
+          <div class="col">
+            <div class="card h-100">
+              <img src="img/subasuka.webp" class="card-img-top" alt="Subasuka WaterPark" />
+              <div class="card-body">
+                <h5 class="card-title">Subasuka WaterPark</h5>
+                <p class="card-text">Taman air seru dengan berbagai wahana untuk anak-anak dan keluarga.</p>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSubasuka">Lihat Detail</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bukit Cinta -->
+          <div class="col">
+            <div class="card h-100">
+              <img src="img/bcinta.jpg" class="card-img-top" alt="Bukit Cinta" />
+              <div class="card-body">
+                <h5 class="card-title">Bukit Cinta</h5>
+                <p class="card-text">Spot romantis dengan pemandangan alam yang memukau di sore hari.</p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalBukit">Lihat Detail</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gunung Fatule'u -->
+          <div class="col">
+            <div class="card h-100">
+              <img src="img/fatuleu.jpg" class="card-img-top" alt="Gunung Fatule'u" />
+              <div class="card-body">
+                <h5 class="card-title">Gunung Fatule'u</h5>
+                <p class="card-text">Gunung batu unik yang menjadi tempat favorit pendaki dan fotografer.</p>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalFatuleu">Lihat Detail</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Taman Nostalgia -->
+          <div class="col">
+            <div class="card h-100">
+              <img src="img/tamnos.jpg" class="card-img-top" alt="Taman Nostalgia" />
+              <div class="card-body">
+                <h5 class="card-title">Taman Nostalgia</h5>
+                <p class="card-text">Taman kota penuh kenangan, cocok untuk bersantai sore.</p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalNostalgia">Lihat Detail</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kuah Asam Ikan Tenau -->
+          <div class="col">
+            <div class="card h-100">
+              <img src="img/artis.jpg" class="card-img-top" alt="Kuah Asam Ikan Tenau" />
+              <div class="card-body">
+                <h5 class="card-title">Kuah Asam Ikan Tenau</h5>
+                <p class="card-text">Wisata kuliner khas laut yang menggugah selera di pinggir pelabuhan.</p>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalArtis">Lihat Detail</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kafe Tebing -->
+          <div class="col">
+            <div class="card h-100">
+              <img src="img/tebing.jpg" class="card-img-top" alt="Kafe Tebing" />
+              <div class="card-body">
+                <h5 class="card-title">Kafe Tebing</h5>
+                <p class="card-text">Kafe eksotis di tepi tebing dengan panorama laut yang memesona.</p>
+                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalTebing">Lihat Detail</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bendungan Tilong -->
+          <div class="col">
+            <div class="card h-100">
+              <img src="img/tilong.jpg" class="card-img-top" alt="Bendungan Tilong" />
+              <div class="card-body">
+                <h5 class="card-title">Bendungan Tilong</h5>
+                <p class="card-text">Tempat tenang untuk memancing dan menikmati pemandangan alam.</p>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalTilong">Lihat Detail</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bendungan Raknamo -->
+          <div class="col">
+            <div class="card h-100">
+              <img src="img/raknamo.jpg" class="card-img-top" alt="Bendungan Raknamo" />
+              <div class="card-body">
+                <h5 class="card-title">Bendungan Raknamo</h5>
+                <p class="card-text">Bendungan megah dikelilingi perbukitan hijau yang menyejukkan.</p>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRaknamo">Lihat Detail</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="modalLasiana" tabindex="-1" aria-labelledby="modalLabelLasiana" aria-hidden="true">
+        <div class="modal-dialog modal-xl-custom">
+          <div class="modal-content custom-modal-content">
+              <div class="modal-header d-flex justify-content-between align-items-center">
+         <h5 class="modal-title mb-0" id="modalLabelLasiana">Pantai Lasiana</h5>
+  
+          <div class="d-flex align-items-center">
+            <button type="button" class="btn btn-sm btn-outline-secondary me-2 btn-fullscreen-toggle" title="Perbesar">⛶</button>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+           </div>
+        </div>
+        <div class="modal-body">
+         <!-- Deskripsi Umum -->
+        <div class="mb-4">
+         <p><span class="emoji">💰</span><strong>Status:</strong> Berbayar (Rp 6.000)</p>
+         <p><span class="emoji">📍</span><strong>Lokasi:</strong> Desa Lasiana, Kecamatan Kelapa Lima, Kota Kupang, NTT</p>
+         <p>
+           Pantai Lasiana, terletak di Desa Lasiana, Kecamatan Kelapa Lima, Kota Kupang, Nusa Tenggara Timur, merupakan destinasi wisata unggulan yang memadukan keindahan alam, budaya lokal, dan wisata kuliner. Dengan luas sekitar 3,5 hektar, Pantai Lasiana menawarkan pengalaman wisata yang beragam bagi pengunjung yang mencari keunikan Kupang.
+           </p>
+        </div>
+
+        <!-- Lokasi dan Rute -->
+        <div class="mb-4">
+        <h6><strong>📌 Lokasi dan Rute Menuju Pantai Lasiana</strong></h6>
+        <p>
+         Pantai Lasiana berlokasi di Desa Lasiana, Kecamatan Kelapa Lima, Kupang, hanya sekitar 12 kilometer dari pusat Kota Kupang. Dengan waktu tempuh sekitar 20 menit dari pusat kota, pantai ini mudah dijangkau menggunakan kendaraan pribadi atau transportasi umum.
+       </p>
+       <p>
+       Rute menuju Pantai Lasiana sudah tertata rapi dengan petunjuk arah yang memudahkan pengunjung menuju lokasi. Pantai ini juga dekat dengan sejumlah objek wisata lain di Kupang, ideal untuk wisatawan yang ingin menjelajahi keindahan alam NTT dalam satu perjalanan.
+       </p>
+       </div>
+        <!-- Foto Utama Besar -->
+        <!-- Foto Utama Besar -->
+        <div class="mb-4 text-center">
+         <img src="img/lasiana6.jpg"
+          class="img-fluid rounded shadow-sm"
+          style="max-width: 100%; width: 100%; height: auto;"
+          alt="Pemandangan utama Pantai Lasiana">
+          <small class="d-block text-muted mt-2">Pemandangan utama Pantai Lasiana yang memikat pengunjung.</small>
+        </div>
+
+
+
+
+       <!-- Jam dan Tiket -->
+       <div class="mb-4">
+       <h6><strong>Jam Buka dan Harga Tiket Masuk</strong></h6>
+       <p>
+       Pantai Lasiana buka <strong>24 jam setiap hari</strong>, sehingga pengunjung dapat menikmati keindahan pantai kapan saja.
+       </p>
+       <p>
+        Harga tiket masuk:
+        <ul>
+        <li>Dewasa: Rp6.000</li>
+        <li>Anak-anak: Rp3.000</li>
+       </ul>
+       </p>
+       </div>
+
+              <!-- Galeri -->
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <div class="card">
+                    <img src="img/lasiana1.jpeg" class="card-img-top" alt="Pantai Lasiana 1" />
+                    <div class="card-body p-2">
+                      <small class="text-muted">Gerbang utama Pantai Lasiana yang ikonik.</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card">
+                    <img src="img/lasiana2.jpg" class="card-img-top" alt="Pantai Lasiana 2" />
+                    <div class="card-body p-2">
+                      <small class="text-muted">Suasana sore hari yang ramai dengan pengunjung.</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card">
+                    <img src="img/lasiana3.jpg" class="card-img-top" alt="Pantai Lasiana 3" />
+                    <div class="card-body p-2">
+                      <small class="text-muted">Pemandangan sunset yang menawan di Pantai Lasiana.</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card">
+                    <img src="img/lasiana4.jpg" class="card-img-top" alt="Pantai Lasiana 3" />
+                    <div class="card-body p-2">
+                      <small class="text-muted">Pemandangan Pagi Hari yang Indah Di pantai Lasiana.</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <!-- Modal Gua Monyet -->
+      <div class="modal fade" id="modalGua" tabindex="-1" aria-labelledby="modalLabelGua" aria-hidden="true">
+        <div class="modal-dialog modal-xl-custom">
+          <div class="modal-content custom-modal-content">
+             <div class="modal-header d-flex justify-content-between align-items-center">
+         <h5 class="modal-title mb-0" id="modalLabeGua">Gua Monyet</h5>
+  
+          <div class="d-flex align-items-center">
+            <button type="button" class="btn btn-sm btn-outline-secondary me-2 btn-fullscreen-toggle" title="Perbesar">⛶</button>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+           </div>
+        </div>
+      
+       <div class="modal-body">
+        <!-- Status & Lokasi -->
+         <div class="mb-4">
+          <p><span class="emoji">🐒</span><strong>Status:</strong> Wisata Alam, dapat dikunjungi setiap hari</p>
+          <p><span class="emoji">📍</span><strong>Lokasi:</strong> Kelurahan Alak, Kecamatan Kelapa Lima, Kota Kupang</p>
+          <p>
+            Gua Monyet berjarak sekitar 30 menit dari pusat Kota Kupang. Kawasan ini sejuk dan rindang berkat pepohonan gamal,
+            kontur tanah menurun, serta pemandangan indah Teluk Kupang. Pengunjung bisa menjelajahi gua karst dan jalan setapak.
+          </p>
+         </div>
+
+         <!-- Foto Utama Besar -->
+         <div class="mb-4 text-center">
+          <img src="img/monyet3.jpg" class="img-fluid rounded shadow-sm"
+               style="max-width: 95%; width: 100%; height: auto;"
+               alt="Gua Monyet">
+          <small class="d-block text-muted mt-2">Pesona alami Gua Monyet dan suasana teduhnya.</small>
+         </div>
+
+         <!-- Kehidupan Monyet Liar -->
+         <div class="mb-4">
+          <h6 class="text-dark"><strong>Kehidupan Monyet Liar</strong></h6>
+          <p>
+            Sekitar 317 ekor monyet ekor panjang hidup bebas di taman ini. Mereka aktif, suka bergelantungan, dan berinteraksi
+            dengan pengunjung. Pengunjung disarankan membawa makanan seperti kacang atau buah. Kebersihan dan keselamatan tetap
+            diutamakan.
+          </p>
+         </div>
+
+         <!-- Fasilitas dan Aktivitas -->
+         <div class="mb-4">
+          <h6 class="text-dark"><strong>Fasilitas dan Aktivitas</strong></h6>
+          <p>
+            Tersedia gazebo/lopo tradisional, toilet, warung makanan ringan, dan area bermain anak. Tiket masuk hanya Rp 2.000,
+            dan tarif khusus riset Rp 10.000. Tempat ini cocok untuk rekreasi dan edukasi keluarga maupun pelajar.
+          </p>
+         </div>
+
+         <!-- Sunset dan Fotografi -->
+         <div class="mb-4">
+          <h6 class="text-dark"><strong>Momen Senja dan Fotografi</strong></h6>
+          <p>
+            Spot favorit untuk menikmati sunset di atas Teluk Kupang. Banyak sudut indah untuk berfoto dari taman hingga gua,
+            menjadikan kunjungan semakin berkesan.
+          </p>
+         </div>
+
+         <!-- Jam dan Tips Berkunjung -->
+         <div class="mb-4">
+          <h6 class="text-dark"><strong>Jam Buka dan Tips Berkunjung</strong></h6>
+          <p>
+            <strong>Buka:</strong> Setiap hari pukul 08.00-17.00 WITA. Waktu terbaik adalah pagi (06.00-09.00) dan sore (15.00–18.00).
+            Bawalah bekal, pakaian nyaman, dan hindari memberi makan sembarangan.
+          </p>
+          <p>
+            Gunakan kendaraan pribadi, taksi lokal, atau ojek online karena transportasi umum belum rutin tersedia.
+          </p>
+         </div>
+
+         <!-- Galeri -->
+         <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/monyet.jpg" class="card-img-top" alt="Gua Monyet 1" />
+              <div class="card-body p-2">
+                <small class="text-muted">Gerbang Gua Monyet.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/monyet1.jpeg" class="card-img-top" alt="Gua Monyet 2" />
+              <div class="card-body p-2">
+                <small class="text-muted">Monyet di Gua Monyet.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/monyet4.jpg" class="card-img-top" alt="Gua Monyet 3" />
+              <div class="card-body p-2">
+                <small class="text-muted">Monyet sedang santai.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/monyet2.jpg" class="card-img-top" alt="Gua Monyet 4" />
+              <div class="card-body p-2">
+                <small class="text-muted">Pemandangan sekitar gua.</small>
+              </div>
+            </div>
+           </div>
+          </div>
+         </div> <!-- End of modal-body -->
+        </div>
+      </div>
+    
+     </div>
+      <!-- Modal Batu Nona -->
+<div class="modal fade" id="modalBatu" tabindex="-1" aria-labelledby="modalLabelBatu" aria-hidden="true">
+  <div class="modal-dialog modal-xl-custom">
+    <div class="modal-content custom-modal-content">
+        <div class="modal-header d-flex justify-content-between align-items-center">
+         <h5 class="modal-title mb-0" id="modalLabelBatu">Pantai Batu Nona</h5>
+  
+          <div class="d-flex align-items-center">
+            <button type="button" class="btn btn-sm btn-outline-secondary me-2 btn-fullscreen-toggle" title="Perbesar">⛶</button>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+           </div>
+        </div>
+
+
+      <div class="modal-body">
+        <!-- Status & Lokasi -->
+        <div class="mb-4">
+          <p><span class="emoji">🏖️</span><strong>Status:</strong> Wisata Alam, dapat dikunjungi setiap hari</p>
+          <p><span class="emoji">📍</span><strong>Lokasi:</strong> Jalan Timor Raya KM 10, Oesapa, Lasiana, Kota Kupang</p>
+          <p>
+            Terletak sekitar 15–20 menit dari pusat kota, Pantai Batu Nona mudah diakses dan dekat dengan berbagai fasilitas umum. 
+            Suasana pantai yang tenang serta pemandangan laut yang memukau menjadikannya favorit untuk bersantai dan berfoto.
+          </p>
+        </div>
+
+        <!-- Foto Utama Besar -->
+        <div class="mb-4 text-center">
+          <img src="img/batunona1.jpg" class="img-fluid rounded shadow-sm"
+               style="max-width: 95%; width: 100%; height: auto;"
+               alt="Pantai Batu Nona">
+          <small class="d-block text-muted mt-2">Keindahan Pantai Batu Nona di sore hari.</small>
+        </div>
+
+        <!-- Daya Tarik dan Mitos -->
+        <div class="mb-4">
+          <h6 class="text-dark"><strong>Daya Tarik dan Mitos</strong></h6>
+          <p>
+            Pantai Batu Nona terkenal dengan batu mitos yang konon menjadi tempat seorang wanita meninggalkan jejak. 
+            Cerita ini menambah daya tarik tersendiri. Pohon lontar yang berjajar rapi di tepi pantai juga menjadi ciri khas unik pantai ini.
+          </p>
+        </div>
+
+        <!-- Fasilitas dan Aktivitas -->
+        <div class="mb-4">
+          <h6 class="text-dark"><strong>Fasilitas dan Aktivitas</strong></h6>
+          <p>
+            Pantai ini menyediakan kolam renang, cafe, toilet, tempat duduk santai, ruang pertemuan, dan area parkir luas. 
+            Penginapan di sekitar pantai juga tersedia bagi wisatawan yang ingin bermalam.
+          </p>
+        </div>
+
+        <!-- Sunset dan Fotografi -->
+        <div class="mb-4">
+          <h6 class="text-dark"><strong>Momen Sunset dan Fotografi</strong></h6>
+          <p>
+            Sunset di Pantai Batu Nona menjadi momen yang sangat ditunggu. 
+            Banyak spot foto ikonik dengan latar belakang laut, batu mitos, dan siluet pohon lontar saat matahari tenggelam.
+          </p>
+        </div>
+
+        <!-- Jam dan Tips Berkunjung -->
+        <div class="mb-4">
+          <h6 class="text-dark"><strong>Jam Buka dan Tips Berkunjung</strong></h6>
+          <p>
+            <strong>Buka:</strong> Setiap hari pukul 08.00–23.00 WITA. Waktu terbaik berkunjung adalah sore menjelang senja.
+            Tiket masuk hanya Rp 5.000/orang.
+          </p>
+          <p>
+            Disarankan membawa kamera, pakaian santai, dan menikmati waktu bersama keluarga atau teman di cafe atau area santai sekitar pantai.
+          </p>
+        </div>
+
+        <!-- Galeri -->
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/batunona2.jpeg" class="card-img-top" alt="Pantai Batu Nona 1" />
+              <div class="card-body p-2">
+                <small class="text-muted">Ikon batu mitos di tepi pantai.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/batunona3.jpeg" class="card-img-top" alt="Pantai Batu Nona 2" />
+              <div class="card-body p-2">
+                <small class="text-muted">Sunset di Pantai Batu Nona.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/batunona4.jpeg" class="card-img-top" alt="Pantai Batu Nona 3" />
+              <div class="card-body p-2">
+                <small class="text-muted">Patung Batu Nona.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- End of modal-body -->
+    </div>
+  </div>
+</div>
+ <!-- Modal Pantai Manikin -->
+<div class="modal fade" id="modalManikin" tabindex="-1" aria-labelledby="modalLabelManikin" aria-hidden="true">
+  <div class="modal-dialog modal-xl-custom">
+    <div class="modal-content custom-modal-content">
+      <div class="modal-header d-flex justify-content-between align-items-center">
+        <h5 class="modal-title mb-0" id="modalLabelManikin">Pantai Manikin</h5>
+        <div class="d-flex align-items-center">
+          <button type="button" class="btn btn-sm btn-outline-secondary me-2 btn-fullscreen-toggle" title="Perbesar">⛶</button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <!-- Status & Lokasi -->
+        <div class="mb-4">
+          <p><span class="emoji">🌊</span><strong>Status:</strong> Wisata Alam, dapat dikunjungi setiap hari</p>
+          <p><span class="emoji">📍</span><strong>Lokasi:</strong> Kelurahan Tarus, Kecamatan Kupang Tengah, Kabupaten Kupang (sekitar 13 km dari pusat Kota Kupang)</p>
+          <p>
+            Pantai Manikin terletak sangat dekat dari pusat kota dan menjadi tujuan favorit masyarakat lokal, terutama saat akhir pekan dan hari libur.
+            Berlokasi di antara Pantai Lasiana dan Nunsui, pantai ini cocok untuk wisata cepat dari kota.
+          </p>
+        </div>
+
+        <!-- Foto Utama Besar -->
+        <div class="mb-4 text-center">
+          <img src="img/manikin2.png" class="img-fluid rounded shadow-sm"
+               style="max-width: 95%; width: 100%; height: auto;"
+               alt="Pantai Manikin">
+          <small class="d-block text-muted mt-2">Panorama Pantai Manikin di sore hari.</small>
+        </div>
+
+        <!-- Keunikan & Aktivitas -->
+        <div class="mb-4">
+          <h6 class="text-dark"><strong>Keunikan dan Daya Tarik<span class="emoji">🏞️</span></strong></h6>
+          <p>
+            Jika beruntung datang saat air surut, pengunjung dapat menikmati batu koral dan batu akik yang tersebar di sepanjang pantai.
+            Lokasinya berada tepat di Teluk Kupang dengan panorama sunset yang sangat indah.
+          </p>
+        </div>
+
+        <!-- Jam dan Tiket -->
+        <div class="mb-4">
+          <h6 class="text-dark"><strong>Jam Buka dan Tiket Masuk<span class="emoji">🔖</span></strong></h6>
+          <p><strong>Buka:</strong> Setiap hari</p>
+          <p><strong>Harga Tiket:</strong> Rp 2.000 per orang</p>
+        </div>
+
+        <!-- Galeri -->
+        <div class="row g-3">
+          <!-- Contoh Galeri, silakan tambahkan lebih banyak -->
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/manikin1.jpeg" class="card-img-top" alt="Pantai Manikin 1" />
+              <div class="card-body p-2">
+                <small class="text-muted">Suasana senja di Pantai Manikin.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/manikin3.jpg" class="card-img-top" alt="Pantai Manikin 2" />
+              <div class="card-body p-2">
+                <small class="text-muted">Pantai Manikin.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/manikin4.jpg" class="card-img-top" alt="Pantai Manikin 2" />
+              <div class="card-body p-2">
+                <small class="text-muted">Pantai Manikin Bisa Di pakai Untuk Tempat Foto Pernikahan.</small>
+              </div>
+            </div>
+          </div>
+          <!-- Tambahkan lebih banyak kolom jika perlu -->
+        </div>
+      </div> <!-- End of modal-body -->
+    </div>
+  </div>
+</div>
+ 
+<!-- Modal Pantai Tablolong -->
+<div class="modal fade" id="modalTablolo" tabindex="-1" aria-labelledby="modalLabelTablolo" aria-hidden="true">
+  <div class="modal-dialog modal-xl-custom">
+    <div class="modal-content custom-modal-content">
+      <div class="modal-header d-flex justify-content-between align-items-center">
+        <h5 class="modal-title mb-0" id="modalLabelTablolo">Pantai Tablolong</h5>
+        <div class="d-flex align-items-center">
+          <button type="button" class="btn btn-sm btn-outline-secondary me-2 btn-fullscreen-toggle" title="Perbesar">⛶</button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <!-- Status & Lokasi -->
+        <div class="mb-4">
+          <p><span class="emoji">🏝️</span><strong>Status:</strong> Wisata Alam, buka 24 jam setiap hari</p>
+          <p><span class="emoji">📍</span><strong>Lokasi:</strong> Desa Tablolong, Kecamatan Kupang Barat, Kota Kupang</p>
+          <p>
+            Pantai Tablolong memiliki ombak tenang, pasir putih kecokelatan yang lembut, dan cocok untuk aktivitas seperti bermain air, berenang, memancing, diving, hingga main ATV.
+          </p>
+        </div>
+
+        <!-- Foto Utama -->
+        <div class="mb-4 text-center">
+          <img src="img/tablolo1.jpg" class="img-fluid rounded shadow-sm"
+               style="max-width: 95%; width: 100%; height: auto;" alt="Pantai Tablolong">
+          <small class="d-block text-muted mt-2">Hamparan luas Pantai Tablolong yang menawan.</small>
+        </div>
+
+        <!-- Rute & Akses -->
+        <div class="mb-4">
+          <h6 class="text-dark"><strong>Rute Menuju Pantai<span class="emoji">🗺️</span></strong></h6>
+          <p>
+            Berjarak sekitar 30 km dari pusat kota Kupang, perjalanan memakan waktu 1–1,5 jam melewati jalur menuju Tenau lalu belok kiri mengikuti petunjuk jalan. 
+            Meskipun jalannya belum beraspal, akses bisa dilalui mobil maupun bis.
+          </p>
+        </div>
+
+        <!-- Fasilitas -->
+        <div class="mb-4">
+          <h6 class="text-dark"><strong>Fasilitas Pantai</strong></h6>
+          <p>
+            	<span class="emoji">🛏️</span>Tersedia area parkir, toilet, warung, lopo-lopo di sepanjang pantai, serta penyewaan ATV. Pantai ini juga menjadi tempat populer untuk memancing dan menyelam.
+          </p>
+        </div>
+
+        <!-- Daya Tarik -->
+        <div class="mb-4">
+          <h6 class="text-dark"><strong>Daya Tarik & Aktivitas</strong></h6>
+          <ul>
+            <li>Pemandangan alam dan pasir putih kecokelatan yang luas.</li>
+            <li>Tempat favorit memancing skala nasional & internasional.</li>
+            <li>Spot diving terkenal (Beatri, Dalam, Tabui).</li>
+            <li>Sunset yang memukau dan cocok untuk siluet fotografi.</li>
+          </ul>
+        </div>
+
+        <!-- Tiket Masuk -->
+        <div class="mb-4">
+          <h6 class="text-dark"><strong>Harga Tiket Masuk<span class="emoji">🔖</span></strong></h6>
+          <ul>
+            <li>Rp 5.000 / motor (gerbang masuk awal)</li>
+            <li>Rp 5.000 / motor (dekat area pantai)</li>
+            <li>Rp 2.500 / orang (jika menggunakan mobil)</li>
+          </ul>
+        </div>
+
+        <!-- Tips -->
+        <div class="mb-4">
+          <h6 class="text-dark"><strong>Tips Wisata <span class="emoji">⚠️</span></strong></h6>
+          <ul>
+            <li>Gunakan sunblock dan topi.</li>
+            <li>Awasi anak-anak saat bermain air.</li>
+            <li>Jaga kebersihan & keselamatan.</li>
+          </ul>
+        </div>
+
+        <!-- Galeri -->
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/tablolo2.jpeg" class="card-img-top" alt="Pantai Tablolong 1" />
+              <div class="card-body p-2">
+                <small class="text-muted">Lopo-lopo khas di pasir Pantai Tablolong.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/tablolo3.jpg" class="card-img-top" alt="Pantai Tablolong 2" />
+              <div class="card-body p-2">
+                <small class="text-muted">Lopo-lopo Khas Di pantai Tablolong.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/tablolo4.jpeg" class="card-img-top" alt="Pantai Tablolong 3" />
+              <div class="card-body p-2">
+                <small class="text-muted">Suasana Sore Hari Pantai Tablolong.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- End of modal-body -->
+    </div>
+  </div>
+</div>
+ <!-- Modal Air Terjun Oenesu -->
+<div class="modal fade" id="modalOenesu" tabindex="-1" aria-labelledby="modalLabelOenesu" aria-hidden="true">
+  <div class="modal-dialog modal-xl-custom">
+    <div class="modal-content custom-modal-content">
+      <div class="modal-header d-flex justify-content-between align-items-center">
+        <h5 class="modal-title mb-0" id="modalLabelOenesu">Air Terjun Oenesu</h5>
+        <div class="d-flex align-items-center">
+          <button type="button" class="btn btn-sm btn-outline-secondary me-2 btn-fullscreen-toggle" title="Perbesar">⛶</button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <!-- Status & Lokasi -->
+        <div class="mb-4">
+          <p><span class="emoji">🌊</span><strong>Status:</strong> Wisata Alam, buka setiap hari pukul 08.00–18.00</p>
+          <p><span class="emoji">📍</span><strong>Lokasi:</strong> Desa Oenesu, Kecamatan Kupang Barat, Kabupaten Kupang</p>
+          <p>
+            Air Terjun Oenesu merupakan air terjun berundak dengan pesona alami, kolam jernih, dan suasana sejuk di tengah alam hijau. Cocok untuk rekreasi dan edukasi.
+          </p>
+        </div>
+
+        <!-- Foto Utama -->
+        <div class="mb-4 text-center">
+          <img src="img/oenesu4.jpg" class="img-fluid rounded shadow-sm" style="max-width: 95%; width: 100%; height: auto;" alt="Air Terjun Oenesu">
+          <small class="d-block text-muted mt-2">Air Terjun Oenesu di tengah suasana hijau dan teduh.</small>
+        </div>
+
+        <!-- Rute & Akses -->
+        <div class="mb-4">
+          <h6 class="text-dark"><strong>Rute & Akses<span class="emoji">🗺️</span></strong></h6>
+          <p>
+            Hanya sekitar 30 menit dari pusat kota Kupang dengan akses jalan yang baik. Kendaraan roda dua dan empat dapat mencapai lokasi hingga area parkir.
+          </p>
+        </div>
+
+        <!-- Fasilitas -->
+        <div class="mb-4">
+          <h6 class="text-dark"><strong>Fasilitas</strong></h6>
+          <p>
+            <span class="emoji">🛏️</span>Terdapat area parkir luas, lopo-lopo, rumah payung, jalur trekking berpagar, tangga beton, dan jembatan sebagai spot selfie favorit.
+          </p>
+        </div>
+
+        <!-- Daya Tarik -->
+        <div class="mb-4">
+          <h6 class="text-dark"><strong>	<span class="emoji">🌊</span>Daya Tarik</strong></h6>
+          <ul>
+            <li>Empat tingkatan air terjun berundak dengan air jernih sepanjang tahun.</li>
+            <li>Spot cliff jumping dari batu besar ke kolam utama.</li>
+            <li>Pemandangan alam sekitar: pepohonan rindang, sungai kecil, dan batuan besar.</li>
+            <li>Nuansa sejuk dan asri sangat cocok untuk keluarga.</li>
+          </ul>
+        </div>
+
+        <!-- Tiket Masuk -->
+        <div class="mb-4">
+          <h6 class="text-dark"><strong>Harga Tiket Masuk</strong></h6>
+          <p><span class="emoji">🔖</span>Rp 5.000 / orang</p>
+        </div>
+
+        <!-- Tips -->
+        <div class="mb-4">
+          <h6 class="text-dark"><strong>Tips Wisata</strong></h6>
+          <ul>
+            <li>Gunakan alas kaki nyaman untuk trekking.</li>
+            <li><span class="emoji">⚠️</span>Hati-hati di area berbatu dan tangga.</li>
+            <li>Bawa bekal dan jaga kebersihan lokasi.</li>
+          </ul>
+        </div>
+
+        <!-- Galeri -->
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/oenesu3.jpg" class="card-img-top" alt="Air Terjun Oenesu 1" />
+              <div class="card-body p-2">
+                <small class="text-muted">Gerbang Air Terjun Oenesu.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/oenesu1.jpg" class="card-img-top" alt="Air Terjun Oenesu 2" />
+              <div class="card-body p-2">
+                <small class="text-muted">Pemandangan air mengalir dari tebing batu.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/oenesu2.jpg" class="card-img-top" alt="Air Terjun Oenesu 3" />
+              <div class="card-body p-2">
+                <small class="text-muted">Spot selfie di jembatan dekat air terjun.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- End of modal-body -->
+    </div>
+  </div>
+</div>
+<!-- Modal Gua Kristal -->
+<div class="modal fade" id="modalKristal" tabindex="-1" aria-labelledby="modalLabelKristal" aria-hidden="true">
+  <div class="modal-dialog modal-xl-custom">
+    <div class="modal-content custom-modal-content">
+      <div class="modal-header d-flex justify-content-between align-items-center">
+        <h5 class="modal-title mb-0" id="modalLabelKristal">Gua Kristal</h5>
+        <div class="d-flex align-items-center">
+          <button type="button" class="btn btn-sm btn-outline-secondary me-2 btn-fullscreen-toggle" title="Perbesar">⛶</button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <!-- Status & Lokasi -->
+        <div class="mb-4">
+          <p><span class="emoji">💧</span><strong>Status:</strong> Wisata Alam, buka setiap hari pukul 08.00–18.00</p>
+          <p><span class="emoji">📍</span><strong>Lokasi:</strong> Desa Bolok, Kecamatan Kupang Barat, Kota Kupang</p>
+          <p>
+            Gua Kristal memiliki kolam air payau yang jernih seperti kristal, tersembunyi di dalam gua karst, menjadikannya salah satu destinasi unik di Kupang.
+          </p>
+        </div>
+
+        <!-- Foto Utama -->
+        <div class="mb-4 text-center">
+          <img src="img/kristal3.webp" class="img-fluid rounded shadow-sm" style="max-width: 95%; width: 100%; height: auto;" alt="Gua Kristal Kupang">
+          <small class="d-block text-muted mt-2">Jernihnya kolam alami di Gua Kristal Kupang.</small>
+        </div>
+
+        <!-- Rute & Akses -->
+        <div class="mb-4">
+          <h6 class="text-dark"><strong>Rute & Akses<span class="emoji">🗺️</span></strong></h6>
+          <p>
+            Sekitar 30 menit dari pusat kota Kupang. Ikuti arah ke Pelabuhan Bolok, masuk melalui jalan Kantor Polairud. Lanjut jalan kaki sekitar 500 meter ke bibir gua dan menuruni batuan terjal 20–25 meter.
+          </p>
+        </div>
+
+        <!-- Fasilitas -->
+        <div class="mb-4">
+          <h6 class="text-dark"><strong>Fasilitas</strong></h6>
+          <p><span class="emoji">🚻</span>Tersedia area parkir. Belum tersedia warung atau toilet, sehingga disarankan membawa bekal dan perlengkapan pribadi.</p>
+        </div>
+
+        <!-- Daya Tarik -->
+        <div class="mb-4">
+          <h6 class="text-dark"><strong><span class="emoji">💎</span>Daya Tarik</strong></h6>
+          <ul>
+            <li>Kolam air payau yang sangat jernih di dasar gua.</li>
+            <li>Pancaran cahaya dari celah gua menghasilkan kilau biru yang memukau.</li>
+            <li>Lokasi tersembunyi, memberi sensasi menjelajah harta karun alami.</li>
+          </ul>
+        </div>
+
+        <!-- Tiket Masuk -->
+        <div class="mb-4">
+          <h6 class="text-dark"><strong>Harga Tiket Masuk</strong></h6>
+          <p><span class="emoji">🔖</span>Belum ada tarif resmi, umumnya berbasis donasi atau bayar sukarela ke penjaga lokal.</p>
+        </div>
+
+        <!-- Tips -->
+        <div class="mb-4">
+          <h6 class="text-dark"><strong>Tips Wisata</strong></h6>
+          <ul>
+            <li><span class="emoji">⚠️</span>Bawa senter/headlamp untuk keamanan saat masuk gua.</li>
+            <li>Gunakan sepatu anti-selip & pakaian ganti.</li>
+            <li>Hindari membawa anak kecil karena akses curam dan licin.</li>
+            <li>Bawa makanan & air minum sendiri.</li>
+            <li>Jaga kebersihan dan jangan buang sampah di dalam gua.</li>
+          </ul>
+        </div>
+
+        <!-- Galeri -->
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/kristal4.jpg" class="card-img-top" alt="Gua Kristal 1" />
+              <div class="card-body p-2">
+                <small class="text-muted">Cahaya masuk menembus gua menciptakan kilauan biru.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/kristal1.jpg" class="card-img-top" alt="Gua Kristal 2" />
+              <div class="card-body p-2">
+                <small class="text-muted">Bebatuan stalaktit di dalam Gua Kristal.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/kristal2.jpeg" class="card-img-top" alt="Gua Kristal 3" />
+              <div class="card-body p-2">
+                <small class="text-muted">Pengunjung berendam di kolam alami dalam gua.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- End of modal-body -->
+    </div>
+  </div>
+</div>
+<!-- Modal Subasuka Waterpark -->
+<div class="modal fade" id="modalSubasuka" tabindex="-1" aria-labelledby="modalLabelSubasuka" aria-hidden="true">
+  <div class="modal-dialog modal-xl-custom">
+    <div class="modal-content custom-modal-content">
+      <div class="modal-header d-flex justify-content-between align-items-center">
+        <h5 class="modal-title mb-0" id="modalLabelSubasuka">Subasuka Waterpark</h5>
+        <div class="d-flex align-items-center">
+          <button type="button" class="btn btn-sm btn-outline-secondary me-2 btn-fullscreen-toggle" title="Perbesar">⛶</button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <!-- Status & Lokasi -->
+        <div class="mb-4">
+          <p><span class="emoji">🏊</span><strong>Status:</strong> Waterpark, cocok untuk keluarga dan anak-anak</p>
+          <p><span class="emoji">📍</span><strong>Lokasi:</strong> Kota Kupang, Nusa Tenggara Timur</p>
+          <p>
+            Subasuka Waterpark merupakan salah satu destinasi wisata air favorit di Kota Kupang. Menawarkan berbagai wahana permainan air yang seru untuk semua kalangan.
+          </p>
+        </div>
+
+        <!-- Foto Utama -->
+        <div class="mb-4 text-center">
+          <img src="img/subasuka4.jpg" class="img-fluid rounded shadow-sm" style="max-width: 95%; width: 100%; height: auto;" alt="Subasuka Waterpark">
+          <small class="d-block text-muted mt-2">Kolam renang utama Subasuka Waterpark Kupang.</small>
+        </div>
+
+        <!-- Fasilitas -->
+        <div class="mb-4">
+          <h6 class="text-dark"><strong>Fasilitas</strong></h6>
+          <ul>
+            <li>Kolam renang anak dan dewasa</li>
+            <li>Seluncuran air & wahana permainan</li>
+            <li>Gazebo & tempat duduk bersantai</li>
+            <li>Toilet & kamar ganti</li>
+            <li>Area parkir kendaraan</li>
+            <li>Kantin dan tempat makan ringan</li>
+            <li>Area foto & dekorasi menarik</li>
+          </ul>
+        </div>
+
+         <div class="mb-4">
+          <h6 class="text-dark"><strong><span class="emoji">🔖</span>Harga Tiket</strong></h6>
+          <ul>
+            <li>Rp.75.000-Rp.125.000 (Dewasa)</li>
+            <li>Rp.50.000-Rp.100.000 (Anak-anak)</li>
+            <li>Rp.60.000-Rp.110.000 (Lansia)</li>
+            <li>Rp.65.000-Rp.115.000 (Rombongan/Mnimal 20 Orang)</li>
+            <li>Rp.150.000-Rp.250.000 (VIP)</li>
+            
+          </ul>
+        </div>
+
+        <!-- Jam Operasional -->
+        <div class="mb-4">
+          <h6 class="text-dark"><strong>Jam Buka</strong></h6>
+          <p><span class="emoji">🕘</span>Buka setiap hari dengan jam operasional sebagai berikut:</p>
+          <ul>
+            <li>Senin - Sabtu: 09.00 – 17.00 WITA</li>
+            <li>Minggu: 09.00 – 19.00 WITA</li>
+          </ul>
+        </div>
+
+        <!-- Tips -->
+        <div class="mb-4">
+          <h6 class="text-dark"><strong>Tips Berkunjung</strong></h6>
+          <ul>
+            <li>Bawa pakaian ganti dan perlengkapan mandi.</li>
+            <li>Datang lebih pagi saat hari libur untuk menghindari keramaian.</li>
+            <li>Jaga barang bawaan di tempat aman.</li>
+            <li>Selalu awasi anak-anak di area kolam.</li>
+          </ul>
+        </div>
+
+        <!-- Galeri -->
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/subasuka.webp" class="card-img-top" alt="Subasuka 1" />
+              <div class="card-body p-2">
+                <small class="text-muted">Area permainan air untuk anak-anak.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/subasuka1.jpeg" class="card-img-top" alt="Subasuka 2" />
+              <div class="card-body p-2">
+                <small class="text-muted">Seluncuran air dan spot foto ceria.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/subasuka2.jpg" class="card-img-top" alt="Subasuka 3" />
+              <div class="card-body p-2">
+                <small class="text-muted">Gazebo dan tempat santai di area taman.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- End of modal-body -->
+    </div>
+  </div>
+</div>
+
+<!-- Modal Bukit Cinta -->
+<div class="modal fade" id="modalBukit" tabindex="-1" aria-labelledby="modalLabelBukit" aria-hidden="true">
+  <div class="modal-dialog modal-xl-custom">
+    <div class="modal-content custom-modal-content">
+      <div class="modal-header d-flex justify-content-between align-items-center">
+        <h5 class="modal-title mb-0" id="modalLabelBukit">Bukit Cinta Kupang</h5>
+        <div class="d-flex align-items-center">
+          <button type="button" class="btn btn-sm btn-outline-secondary me-2 btn-fullscreen-toggle" title="Perbesar">⛶</button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <!-- Status & Lokasi -->
+        <div class="mb-4">
+          <p><i class="bi bi-geo-alt-fill text-primary me-1"></i><strong>Lokasi:</strong> Penfui Timur, Kupang Tengah, Kabupaten Kupang</p>
+          <p><i class="bi bi-clock-fill text-primary me-1"></i><strong>Jam Buka:</strong> 24 jam setiap hari</p>
+          <p><i class="bi bi-cash text-success me-1"></i><strong>Harga Tiket:</strong> Gratis / Tidak dipungut biaya</p>
+        </div>
+
+        <!-- Foto Utama -->
+        <div class="mb-4 text-center">
+          <img src="img/bukit4.jpg" class="img-fluid rounded shadow-sm" style="max-width: 95%; width: 100%; height: auto;" alt="Bukit Cinta Kupang">
+          <small class="d-block text-muted mt-2">Padang rumput luas dan langit senja di Bukit Cinta.</small>
+        </div>
+
+        <!-- Daya Tarik -->
+        <div class="mb-4">
+          <h6 class="text-dark"><i class="bi bi-stars text-warning me-1"></i><strong>Daya Tarik</strong></h6>
+          <ul>
+            <li><i class="bi bi-heart-fill text-danger me-1"></i>Padang sabana hijau dan romantis untuk bersantai & berfoto.</li>
+            <li><i class="bi bi-camera text-warning me-1"></i>Spot sunset dengan siluet pemandangan menawan.</li>
+            <li><i class="bi bi-person-walking text-success me-1"></i>Area jogging & eksplorasi gua peninggalan Jepang.</li>
+            <li><i class="bi bi-people text-primary me-1"></i>Ramai dikunjungi wisatawan lokal & luar kota.</li>
+          </ul>
+        </div>
+
+        <!-- Tips -->
+        <div class="mb-4">
+          <h6 class="text-dark"><i class="bi bi-lightbulb-fill text-warning me-1"></i><strong>Tips Berkunjung</strong></h6>
+          <ul>
+            <li>Datang saat sore hari untuk menikmati sunset.</li>
+            <li>Bawa tikar dan camilan untuk piknik.</li>
+            <li><i class="bi bi-trash3 text-danger me-1"></i>Jaga kebersihan, jangan tinggalkan sampah ya!</li>
+          </ul>
+        </div>
+
+        <!-- Galeri -->
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/bukit3.jpg" class="card-img-top" alt="Bukit Cinta 1" />
+              <div class="card-body p-2">
+                <small class="text-muted">Suasana romantis di Bukit Cinta saat senja.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/bukit2.jpg" class="card-img-top" alt="Bukit Cinta 2" />
+              <div class="card-body p-2">
+                <small class="text-muted">Siluet pengunjung berfoto dengan latar sunset.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/Bukit1.jpg" class="card-img-top" alt="Bukit Cinta 3" />
+              <div class="card-body p-2">
+                <small class="text-muted">Padang rumput luas untuk piknik keluarga.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- End of modal-body -->
+    </div>
+  </div>
+</div>
+
+<!-- Modal Gunung Fatuleu -->
+<div class="modal fade" id="modalFatuleu" tabindex="-1" aria-labelledby="modalLabelFatuleu" aria-hidden="true">
+  <div class="modal-dialog modal-xl-custom">
+    <div class="modal-content custom-modal-content">
+      <div class="modal-header d-flex justify-content-between align-items-center">
+        <h5 class="modal-title mb-0" id="modalLabelFatuleu">Gunung Fatuleu</h5>
+        <div class="d-flex align-items-center">
+          <button type="button" class="btn btn-sm btn-outline-secondary me-2 btn-fullscreen-toggle" title="Perbesar">⛶</button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <!-- Status & Lokasi -->
+        <div class="mb-4">
+          <p><i class="bi bi-geo-alt-fill text-primary me-1"></i><strong>Lokasi:</strong> Desa Nunsaen, Kecamatan Fatuleu Tengah, Kabupaten Kupang</p>
+          <p><i class="bi bi-graph-up text-success me-1"></i><strong>Ketinggian:</strong> 1.108 mdpl</p>
+          <p><i class="bi bi-clock-fill text-primary me-1"></i><strong>Jam Kunjungan:</strong> Terbaik saat fajar atau senja</p>
+          <p><i class="bi bi-cash text-success me-1"></i><strong>Harga Tiket:</strong> Rp5.000 (motor), Rp10.000 (mobil)</p>
+        </div>
+
+        <!-- Foto Utama -->
+        <div class="mb-4 text-center">
+          <img src="img/gunung3.jpg" class="img-fluid rounded shadow-sm" style="max-width: 95%; width: 100%; height: auto;" alt="Gunung Fatuleu">
+          <small class="d-block text-muted mt-2">Gunung Fatuleu, pemandangan batu megah di NTT.</small>
+        </div>
+
+        <!-- Daya Tarik -->
+        <div class="mb-4">
+          <h6 class="text-dark"><i class="bi bi-stars text-warning me-1"></i><strong>Daya Tarik</strong></h6>
+          <ul>
+            <li><i class="bi bi-signpost-split-fill text-success me-1"></i>Perjalanan pendakian singkat ±1 jam dengan 1.500 anak tangga.</li>
+            <li><i class="bi bi-eye-fill text-danger me-1"></i>Pemandangan Pulau Timor, laut, dan kota Kupang dari puncak.</li>
+            <li><i class="bi bi-lightning-charge-fill text-warning me-1"></i>Spot meditasi dan lokasi magis masyarakat lokal.</li>
+            <li><i class="bi bi-flag text-info me-1"></i>Bendera Indonesia dan Belanda berkibar di puncak.</li>
+          </ul>
+        </div>
+
+        <!-- Tips -->
+        <div class="mb-4">
+          <h6 class="text-dark"><i class="bi bi-lightbulb-fill text-warning me-1"></i><strong>Tips Pendakian</strong></h6>
+          <ul>
+            <li>Bawa air minum & topi, cuaca bisa panas.</li>
+            <li>Kenakan sepatu trekking, batu cukup licin dan curam.</li>
+            <li><i class="bi bi-people-fill text-primary me-1"></i>Gunakan jasa pemandu lokal jika pertama kali naik.</li>
+          </ul>
+        </div>
+
+        <!-- Galeri -->
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/gunung3.jpg" class="card-img-top" alt="Gunung Fatuleu 1" />
+              <div class="card-body p-2">
+                <small class="text-muted">Pendaki di puncak Gunung Fatuleu.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/gunung4.jpg" class="card-img-top" alt="Gunung Fatuleu 2" />
+              <div class="card-body p-2">
+                <small class="text-muted">Gunung FatuLeu.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/gunung1.webp" class="card-img-top" alt="Gunung Fatuleu 3" />
+              <div class="card-body p-2">
+                <small class="text-muted">Pemandangan dari atas Gunung Fatuleu.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- End of modal-body -->
+    </div>
+  </div>
+</div>
+
+<!-- Modal Taman Nostalgia Kupang -->
+<div class="modal fade" id="modalNostalgia" tabindex="-1" aria-labelledby="modalLabelNostalgia" aria-hidden="true">
+  <div class="modal-dialog modal-xl-custom">
+    <div class="modal-content custom-modal-content">
+      <div class="modal-header d-flex justify-content-between align-items-center">
+        <h5 class="modal-title mb-0" id="modalLabelNostalgia">Taman Nostalgia Kupang</h5>
+        <div class="d-flex align-items-center">
+          <button type="button" class="btn btn-sm btn-outline-secondary me-2 btn-fullscreen-toggle" title="Perbesar">⛶</button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <!-- Status & Lokasi -->
+        <div class="mb-4">
+          <p><i class="bi bi-geo-alt-fill text-primary me-1"></i><strong>Lokasi:</strong> Desa Oebufu, Kecamatan Oebobo, Kota Kupang</p>
+          <p><i class="bi bi-clock-fill text-primary me-1"></i><strong>Jam Buka:</strong> 24 jam setiap hari</p>
+          <p><i class="bi bi-cash text-success me-1"></i><strong>Harga Tiket:</strong> Gratis / Tidak dipungut biaya</p>
+        </div>
+
+        <!-- Foto Utama -->
+        <div class="mb-4 text-center">
+          <img src="img/taman1.jpg" class="img-fluid rounded shadow-sm" style="max-width: 95%; width: 100%; height: auto;" alt="Taman Nostalgia Kupang">
+          <small class="d-block text-muted mt-2">Suasana hijau dan nyaman di Taman Nostalgia Kupang.</small>
+        </div>
+
+        <!-- Daya Tarik -->
+        <div class="mb-4">
+          <h6 class="text-dark"><i class="bi bi-stars text-warning me-1"></i><strong>Daya Tarik</strong></h6>
+          <ul>
+            <li><i class="bi bi-tree-fill text-success me-1"></i>Area hijau seluas ±500 meter persegi dengan pepohonan rindang.</li>
+            <li><i class="bi bi-fountain text-info me-1"></i>Kolam air mancur indah untuk bersantai & berfoto.</li>
+            <li><i class="bi bi-people-fill text-primary me-1"></i>Tempat favorit keluarga untuk piknik dan berkumpul.</li>
+            <li><i class="bi bi-basket text-danger me-1"></i>Lapangan basket mini & area bermain anak.</li>
+          </ul>
+        </div>
+
+        <!-- Aktivitas -->
+        <div class="mb-4">
+          <h6 class="text-dark"><i class="bi bi-activity text-success me-1"></i><strong>Aktivitas Populer</strong></h6>
+          <ul>
+            <li>Jogging pagi dan sore di jalur jogging track.</li>
+            <li>Bersantai di gazebo dan menikmati angin sejuk.</li>
+            <li>Berfoto di area air mancur atau taman bunga.</li>
+            <li><i class="bi bi-cup-hot-fill text-warning me-1"></i>Menikmati jajanan dari warung sekitar taman.</li>
+          </ul>
+        </div>
+
+        <!-- Fasilitas -->
+        <div class="mb-4">
+          <h6 class="text-dark"><i class="bi bi-tools text-secondary me-1"></i><strong>Fasilitas</strong></h6>
+          <ul>
+            <li>Gazebo untuk bersantai dan berteduh.</li>
+            <li>Area bermain anak & lapangan basket mini.</li>
+            <li>Tempat sampah, lampu taman, dan tempat duduk umum.</li>
+            <li><i class="bi bi-car-front-fill text-primary me-1"></i>Area parkir tersedia di sekitar taman.</li>
+          </ul>
+        </div>
+
+        <!-- Tips -->
+        <div class="mb-4">
+          <h6 class="text-dark"><i class="bi bi-lightbulb-fill text-warning me-1"></i><strong>Tips Berkunjung</strong></h6>
+          <ul>
+            <li>Datang pagi atau sore untuk suasana sejuk dan teduh.</li>
+            <li>Bawa alas duduk atau tikar untuk piknik bersama keluarga.</li>
+            <li><i class="bi bi-trash3 text-danger me-1"></i>Jaga kebersihan taman dengan membuang sampah pada tempatnya.</li>
+          </ul>
+        </div>
+
+        <!-- Galeri -->
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/taman2.jpg" class="card-img-top" alt="Taman Nostalgia 1" />
+              <div class="card-body p-2">
+                <small class="text-muted">Kolam air mancur pusat taman.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/taman3.jpg" class="card-img-top" alt="Taman Nostalgia 2" />
+              <div class="card-body p-2">
+                <small class="text-muted">Gazebo untuk bersantai bersama keluarga.</small>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div> <!-- End of modal-body -->
+    </div>
+  </div>
+</div>
+<!-- Modal Warung Artis Kuah Asam Tenau -->
+<div class="modal fade" id="modalArtis" tabindex="-1" aria-labelledby="modalLabelArtis" aria-hidden="true">
+  <div class="modal-dialog modal-xl-custom">
+    <div class="modal-content custom-modal-content">
+      <div class="modal-header d-flex justify-content-between align-items-center">
+        <h5 class="modal-title mb-0" id="modalLabelArtis">Warung Artis Kuah Asam Tenau</h5>
+        <div class="d-flex align-items-center">
+          <button type="button" class="btn btn-sm btn-outline-secondary me-2 btn-fullscreen-toggle" title="Perbesar">⛶</button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <!-- Info Umum -->
+        <div class="mb-4">
+          <p><i class="bi bi-geo-alt-fill text-primary me-1"></i><strong>Lokasi:</strong> Kecamatan Alak, Kota Kupang, Nusa Tenggara Timur</p>
+          <p><i class="bi bi-clock-fill text-primary me-1"></i><strong>Jam Buka:</strong> Setiap hari pukul 06.30 – 15.00 WITA</p>
+          <p><i class="bi bi-cash text-success me-1"></i><strong>Harga:</strong> Bervariasi, terjangkau mulai dari menu rumahan</p>
+        </div>
+
+        <!-- Deskripsi Singkat -->
+        <div class="mb-4">
+          <h6 class="text-dark">
+            <i class="bi bi-journal-richtext text-primary me-1"></i><strong>Deskripsi Singkat</strong>
+          </h6>
+          <p>
+            Sejak tahun 1950-an, <strong>Warung Artis Kuah Asam Tenau</strong> telah menyajikan kelezatan khas Kupang yang autentik dan konsisten. Dikenal luas karena <em>kuah asam</em>-nya yang segar dan sambal legendaris, warung ini menjadi tempat makan wajib bagi wisatawan dan food vlogger ternama.
+          </p>
+          <ul>
+            <li><i class="bi bi-egg-fried text-success me-1"></i>Menu andalan: kuah asam, ikan goreng, ikan asap, dan nasi campur</li>
+            <li><i class="bi bi-people-fill text-info me-1"></i>Ramai dikunjungi masyarakat lokal dan selebgram kuliner</li>
+            <li><i class="bi bi-shop text-secondary me-1"></i>Suasana warung tradisional yang hangat dan sederhana</li>
+          </ul>
+
+          <div class="alert alert-warning mt-3" role="alert">
+            🍽️ <strong>Fun Fact:</strong> Warung ini sempat dikunjungi Nex Carlos, dan terkenal karena sambal cobek khas yang tidak semua orang tahu bisa dipesan khusus!
+          </div>
+
+          <p class="mt-3 text-muted fst-italic">
+            Ingin merasakan cita rasa Kupang yang otentik? Warung Artis jawabannya. Simpel, tradisional, dan penuh kenangan rasa.
+          </p>
+        </div>
+
+        <!-- Foto Utama -->
+        <div class="mb-4 text-center">
+          <img src="img/ikan2.jpg" class="img-fluid rounded shadow-sm" style="max-width: 95%; width: 100%; height: auto;" alt="Warung Artis Kuah Asam Tenau">
+          <small class="d-block text-muted mt-2">Warung legendaris dengan rasa autentik sejak 1950-an.</small>
+        </div>
+
+        <!-- Daya Tarik -->
+        <div class="mb-4">
+          <h6 class="text-dark"><i class="bi bi-stars text-warning me-1"></i><strong>Daya Tarik</strong></h6>
+          <ul>
+            <li><i class="bi bi-people-fill text-primary me-1"></i>Populer di kalangan warga dan food vlogger seperti Nex Carlos.</li>
+            <li><i class="bi bi-egg-fried text-success me-1"></i>Sajian khas seperti kuah asam, nasi ikan goreng, ikan asap, dan nasi campur.</li>
+            <li><i class="bi bi-fire text-danger me-1"></i>Pilihan sambal: sambal mentah, sambal goreng, dan sambal cobek khas.</li>
+            <li><i class="bi bi-shop text-secondary me-1"></i>Berdiri sejak 1950-an dengan suasana warung sederhana yang legendaris.</li>
+          </ul>
+        </div>
+
+        <!-- Tips -->
+        <div class="mb-4">
+          <h6 class="text-dark"><i class="bi bi-lightbulb-fill text-warning me-1"></i><strong>Tips Berkunjung</strong></h6>
+          <ul>
+            <li>Datang lebih pagi agar tidak kehabisan menu populer seperti nasi campur dan ikan asap.</li>
+            <li><i class="bi bi-chat-left-quote text-info me-1"></i>Tanyakan sambal cobek jika ingin dibuatkan khusus.</li>
+            <li><i class="bi bi-person-lines-fill text-muted me-1"></i>Jangan ragu ngobrol dengan penjual, kisahnya menarik!</li>
+          </ul>
+        </div>
+
+        <!-- Galeri -->
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/ikan1.jpg" class="card-img-top" alt="Menu Kuah Asam" />
+              <div class="card-body p-2">
+                <small class="text-muted">Kuah asam khas Kupang yang segar dan kaya rempah.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/ikan4.jpeg" class="card-img-top" alt="Suasana Warung Artis" />
+              <div class="card-body p-2">
+                <small class="text-muted">Kuah Asam yang sangat Legend.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/ikan3.jpg" class="card-img-top" alt="Sambal Khas" />
+              <div class="card-body p-2">
+                <small class="text-muted">Aneka sambal pilihan di meja makan.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- End of modal-body -->
+    </div>
+  </div>
+</div>
+
+
+ <!-- Modal Cafe Tebing Eljio Lasiana -->
+<div class="modal fade" id="modalTebing" tabindex="-1" aria-labelledby="modalLabelTebing" aria-hidden="true">
+  <div class="modal-dialog modal-xl-custom">
+    <div class="modal-content custom-modal-content">
+      <div class="modal-header d-flex justify-content-between align-items-center">
+        <h5 class="modal-title mb-0" id="modalLabelTebing">Cafe Tebing Eljio Lasiana</h5>
+        <div class="d-flex align-items-center">
+          <button type="button" class="btn btn-sm btn-outline-secondary me-2 btn-fullscreen-toggle" title="Perbesar">⛶</button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <!-- Info Umum -->
+        <div class="mb-4">
+          <p><i class="bi bi-geo-alt-fill text-primary me-1"></i><strong>Lokasi:</strong> Jl. Halilintar, Lasiana, Kec. Kelapa Lima, Kota Kupang</p>
+          <p><i class="bi bi-clock-fill text-primary me-1"></i><strong>Jam Buka:</strong> Setiap hari pukul 15.00 – 22.00 WITA</p>
+          <p><i class="bi bi-cash text-success me-1"></i><strong>Tiket Masuk:</strong> Gratis (hanya wajib beli makanan/minuman)</p>
+        </div>
+
+        <!-- Foto Utama -->
+        <div class="mb-4 text-center">
+          <img src="img/kafe2.jpg" class="img-fluid rounded shadow-sm" style="max-width: 95%; width: 100%; height: auto;" alt="Cafe Tebing Eljio Lasiana">
+          <small class="d-block text-muted mt-2">Pemandangan sunset dari Cafe Tebing yang menghadap ke Pantai Lasiana.</small>
+        </div>
+
+        <!-- Daya Tarik -->
+        <div class="mb-4">
+          <h6 class="text-dark"><i class="bi bi-stars text-warning me-1"></i><strong>Daya Tarik</strong></h6>
+          <ul>
+            <li><i class="bi bi-sunset text-danger me-1"></i>Spot favorit menikmati sunset dengan panorama pantai dari ketinggian.</li>
+            <li><i class="bi bi-music-note-beamed text-secondary me-1"></i>Suasana estetik dengan lampu kuning temaram dan alunan musik santai.</li>
+            <li><i class="bi bi-shop text-info me-1"></i>34 meja dan kursi kayu/plastik untuk bersantai bersama teman atau keluarga.</li>
+            <li><i class="bi bi-person-hearts text-success me-1"></i>Pelayanan ramah dan pengunjung diarahkan duduk setelah memesan makanan.</li>
+          </ul>
+        </div>
+
+        <!-- Menu dan Harga -->
+        <div class="mb-4">
+          <h6 class="text-dark"><i class="bi bi-cup-hot text-warning me-1"></i><strong>Menu dan Harga</strong></h6>
+          <ul>
+            <li>Jagung bakar, pisang bakar, salome, dan aneka jajanan lokal.</li>
+            <li><i class="bi bi-coin text-success me-1"></i>Harga mulai dari Rp 5.000 – Rp 10.000.</li>
+          </ul>
+        </div>
+
+        <!-- Tips -->
+        <div class="mb-4">
+          <h6 class="text-dark"><i class="bi bi-lightbulb-fill text-warning me-1"></i><strong>Tips Berkunjung</strong></h6>
+          <ul>
+            <li>Datang sekitar pukul 17.00 untuk mendapatkan tempat terbaik saat sunset.</li>
+            <li><i class="bi bi-clock-history text-info me-1"></i>Antre makanan bisa lama saat ramai, sabar ya~</li>
+            <li><i class="bi bi-camera text-secondary me-1"></i>Bawa kamera karena banyak spot foto Instagramable.</li>
+          </ul>
+        </div>
+
+        <!-- Galeri -->
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/kafe1.jpg" class="card-img-top" alt="Cafe Tebing 1" />
+              <div class="card-body p-2">
+                <small class="text-muted">Sunset dari ketinggian Cafe Tebing.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/kafe4.jpg" class="card-img-top" alt="Cafe Tebing 2" />
+              <div class="card-body p-2">
+                <small class="text-muted">Suasana malam dengan lampu temaram.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/kafe3.webp" class="card-img-top" alt="Cafe Tebing 3" />
+              <div class="card-body p-2">
+                <small class="text-muted">Tempat duduk kayu dan musik live akustik.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- End of modal-body -->
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal Bendungan Tilong Kupang -->
+<div class="modal fade" id="modalTilong" tabindex="-1" aria-labelledby="modalLabelTilong" aria-hidden="true">
+  <div class="modal-dialog modal-xl-custom">
+    <div class="modal-content custom-modal-content">
+      <div class="modal-header d-flex justify-content-between align-items-center">
+        <h5 class="modal-title mb-0" id="modalLabelTilong">Bendungan Tilong - Kupang</h5>
+        <div class="d-flex align-items-center">
+          <button type="button" class="btn btn-sm btn-outline-secondary me-2 btn-fullscreen-toggle" title="Perbesar">⛶</button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <!-- Info Umum -->
+        <div class="mb-4">
+          <p><i class="bi bi-geo-alt-fill text-primary me-1"></i><strong>Lokasi:</strong> Desa Oelatimo, Kec. Kupang Timur, Kab. Kupang, NTT</p>
+          <p><i class="bi bi-clock-fill text-primary me-1"></i><strong>Jam Buka:</strong> Setiap hari pukul 08.00 – 18.00 WITA</p>
+          <p><i class="bi bi-cash text-success me-1"></i><strong>Tiket Masuk:</strong> Gratis</p>
+        </div>
+
+        <!-- Deskripsi Singkat -->
+        <div class="mb-4">
+          <h6 class="text-dark">
+            <i class="bi bi-journal-richtext text-primary me-1"></i><strong>Deskripsi Singkat</strong>
+          </h6>
+          <p>
+            Terletak di Desa Oelatimo, <strong>Bendungan Tilong</strong> menawarkan suasana tenang dengan pemandangan danau buatan yang dikelilingi perbukitan hijau.
+            Tempat ini menjadi pilihan populer untuk beristirahat, bersantai, dan tentunya memancing.
+          </p>
+          <ul>
+            <li><i class="bi bi-water text-primary me-1"></i>Waduk luas dengan suasana alam terbuka dan sejuk</li>
+            <li><i class="bi bi-tree-fill text-success me-1"></i>Cocok untuk piknik bersama keluarga di bawah pepohonan rindang</li>
+            <li><i class="bi bi-camera-fill text-info me-1"></i>Spot foto alami dengan latar air dan bukit</li>
+          </ul>
+
+          <div class="alert alert-warning mt-3" role="alert">
+            🎣 <strong>Tips:</strong> Jangan lupa bawa pancing! Banyak spot sunyi dan nyaman untuk memancing santai.
+          </div>
+
+          <p class="mt-3 text-muted fst-italic">
+            Ideal untuk pengunjung yang ingin menjauh sejenak dari hiruk-pikuk kota Kupang dan menikmati ketenangan alam.
+          </p>
+        </div>
+
+        <!-- Foto Utama -->
+        <div class="mb-4 text-center">
+          <img src="img/bendung4.jpg" class="img-fluid rounded shadow-sm" style="max-width: 95%; width: 100%; height: auto;" alt="Bendungan Tilong">
+          <small class="d-block text-muted mt-2">Keindahan panorama air dan bukit di sekitar Bendungan Tilong.</small>
+        </div>
+
+        <!-- Fasilitas -->
+        <div class="mb-4">
+          <h6 class="text-dark"><i class="bi bi-tools text-warning me-1"></i><strong>Fasilitas</strong></h6>
+          <ul>
+            <li>Area parkir luas</li>
+            <li>Warung makanan dan minuman ringan</li>
+            <li>Gazebo untuk berteduh dan makan bersama</li>
+          </ul>
+        </div>
+
+        <!-- Tips -->
+        <div class="mb-4">
+          <h6 class="text-dark"><i class="bi bi-lightbulb-fill text-warning me-1"></i><strong>Tips Berkunjung</strong></h6>
+          <ul>
+            <li>Datang pagi atau sore hari untuk cuaca yang sejuk dan pencahayaan foto yang bagus.</li>
+            <li><i class="bi bi-trash text-danger me-1"></i>Jaga kebersihan, jangan buang sampah sembarangan.</li>
+            <li><i class="bi bi-drone text-secondary me-1"></i>Bawa drone atau kamera untuk menangkap lanskap dari udara.</li>
+          </ul>
+        </div>
+
+        <!-- Galeri -->
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/bendung1.jpeg" class="card-img-top" alt="Tilong 1" />
+              <div class="card-body p-2">
+                <small class="text-muted">Gerbang Bendungan Tilong .</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/bendung2.jpeg" class="card-img-top" alt="Tilong 2" />
+              <div class="card-body p-2">
+                <small class="text-muted">Bendungan Tilong Kupang.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/bendungan5.jpg" class="card-img-top" alt="Tilong 3" />
+              <div class="card-body p-2">
+                <small class="text-muted">Pemandangan Air Bendungan Tilong.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- End of modal-body -->
+    </div>
+  </div>
+</div>
+
+<!-- Modal Bendungan Raknamo -->
+<div class="modal fade" id="modalRaknamo" tabindex="-1" aria-labelledby="modalLabelRaknamo" aria-hidden="true">
+  <div class="modal-dialog modal-xl-custom">
+    <div class="modal-content custom-modal-content">
+      <div class="modal-header d-flex justify-content-between align-items-center">
+        <h5 class="modal-title mb-0" id="modalLabelRaknamo">Bendungan Raknamo - Kupang</h5>
+        <div class="d-flex align-items-center">
+          <button type="button" class="btn btn-sm btn-outline-secondary me-2 btn-fullscreen-toggle" title="Perbesar">⛶</button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <!-- Info Umum -->
+        <div class="mb-4">
+          <p><i class="bi bi-geo-alt-fill text-primary me-1"></i><strong>Lokasi:</strong> Desa Raknamo, Kec. Amabi Oefeto, Kab. Kupang, NTT</p>
+          <p><i class="bi bi-clock-fill text-primary me-1"></i><strong>Jam Buka:</strong> Setiap hari pukul 06.00 – 18.00 WITA</p>
+          <p><i class="bi bi-cash text-success me-1"></i><strong>Tiket Masuk:</strong> Gratis Tanpa Di Pungut Biaya</p>
+        </div>
+
+        <!-- Foto Utama -->
+        <div class="mb-4 text-center">
+          <img src="img/raknamo1.jpg" class="img-fluid rounded shadow-sm" style="max-width: 95%; width: 100%; height: auto;" alt="Bendungan Raknamo">
+          <small class="d-block text-muted mt-2">Gerbang utama Bendungan Raknamo, ikon baru destinasi wisata air di Kupang.</small>
+        </div>
+
+        <!-- Daya Tarik -->
+        <div class="mb-4">
+          <h6 class="text-dark"><i class="bi bi-stars text-warning me-1"></i><strong>Daya Tarik</strong></h6>
+          <ul>
+            <li><i class="bi bi-droplet-half text-primary me-1"></i>Bendungan multifungsi hasil pembangunan era Presiden Jokowi (resmi dibuka 2018).</li>
+            <li><i class="bi bi-building text-secondary me-1"></i>Dikelilingi taman tertata rapi, lopo-lopo (gazebo), dan bangunan vila (non-sewa).</li>
+            <li><i class="bi bi-camera text-info me-1"></i>Teras pandang kayu yang menghadap ke danau dan bukit, spot foto cantik!</li>
+            <li><i class="bi bi-easel text-success me-1"></i>Relief budaya NTT: komodo, Waerebo, sasando, dan topi ti’i langga menghiasi area utama.</li>
+          </ul>
+        </div>
+
+        <!-- Sejarah dan Fakta Menarik -->
+        <div class="mb-4">
+          <h6 class="text-dark"><i class="bi bi-journal-richtext text-warning me-1"></i><strong>Sejarah & Fakta Menarik</strong></h6>
+          <ul>
+            <li>Dibangun sejak Desember 2014 dan diresmikan 9 Januari 2018 oleh Presiden Joko Widodo.</li>
+            <li>Bagian dari 49 bendungan strategis nasional 2015–2019 oleh Kementerian PUPR.</li>
+            <li>Dirancang untuk pengairan seluas 1.250 hektar dan pengembangan wisata air.</li>
+            <li>Rencana dermaga dan perahu wisata sedang dalam tahap pengembangan.</li>
+          </ul>
+        </div>
+
+        <!-- Tips Berkunjung -->
+        <!-- Tips Berkunjung -->
+      <!-- Contoh struktur deskripsi modal yang telah diperindah -->
+<div class="mb-4">
+  <h6 class="text-dark">
+    <i class="bi bi-journal-richtext text-primary me-1"></i><strong>Deskripsi Singkat</strong>
+  </h6>
+  <p>
+    Terletak sekitar 1 jam dari pusat Kota Kupang, <strong>Bendungan Raknamo</strong> bukan sekadar bendungan—ia menjadi perpaduan antara fungsionalitas dan destinasi wisata yang menawan.
+    Panorama alamnya dihiasi danau biru dan bukit hijau yang menyegarkan mata.
+  </p>
+  <ul>
+    <li><i class="bi bi-droplet text-primary me-1"></i>Dikelilingi alam hijau dengan udara sejuk dan damai</li>
+    <li><i class="bi bi-brush text-danger me-1"></i>Taman dan relief budaya menggambarkan ikon-ikon NTT seperti Komodo & Sasando</li>
+    <li><i class="bi bi-binoculars text-success me-1"></i>Teras kayu yang instagramable untuk menikmati pemandangan danau</li>
+  </ul>
+
+  <div class="alert alert-warning mt-3" role="alert">
+    🎣 <strong>Tips:</strong> Jangan lupa bawa pancing! Banyak spot sunyi dan nyaman untuk memancing santai.
+  </div>
+
+  <p class="mt-3 text-muted fst-italic">
+    Siapkan kamera & cemilan favoritmu, lalu nikmati hari yang tenang bersama alam di Bendungan Raknamo.
+  </p>
+</div>
+
+
+
+        <!-- Galeri -->
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/raknamo2.jpg" class="card-img-top" alt="Raknamo 1" />
+              <div class="card-body p-2">
+                <small class="text-muted">Lopo Gazebo Bendungan Raknamo.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/raknamo4.jpg" class="card-img-top" alt="Raknamo 2" />
+              <div class="card-body p-2">
+                <small class="text-muted">Panggung kayu untuk menikmati panorama danau dari ketinggian.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/raknamo3.jpg" class="card-img-top" alt="Raknamo 3" />
+              <div class="card-body p-2">
+                <small class="text-muted">Relief Komodo.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- End of modal-body -->
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggleButtons = document.querySelectorAll('.btn-fullscreen-toggle');
+
+    toggleButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const modalDialog = button.closest('.modal-dialog');
+        modalDialog.classList.toggle('modal-fullscreen-custom');
+      });
+    });
+  });
+</script>
+<script>
+  // Ambil parameter dari URL
+  function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+
+  // Buka modal otomatis saat halaman dimuat
+  window.addEventListener("DOMContentLoaded", function () {
+    const modalId = getQueryParam("modal");
+    if (modalId) {
+      const modalEl = document.getElementById(modalId);
+      if (modalEl) {
+        const modal = new bootstrap.Modal(modalEl);
+        modal.show();
+      }
+    }
+  });
+</script>
+
+
+  </body>
+</html>
